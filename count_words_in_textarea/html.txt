@@ -1,6 +1,6 @@
 <View>
-  <Header value="Classify the text and describe it in the text box"/>
-  <Text name="text" value="$text" />
+  <Header value="Classify the text and represent the data in JSON"/>
+  <Text name="text" value="$text"/>
   <View style="position: sticky; top: 0; height: 50px; overflow: auto;">
     <Labels name="label" toName="text">
       <Label value="label_1"/>
@@ -18,5 +18,5 @@
   </Taxonomy>
   <TextArea name="textarea" toName="text" />
 </View><!--{ 
-	"text": "The quick brown fox jumps over the lazy dog."
+	"text": "The quick brown fox jumps over the lazy dog.",
 }-->
