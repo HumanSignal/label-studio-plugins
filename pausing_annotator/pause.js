@@ -1,8 +1,8 @@
 const rules = {
   timesInARow: (times) => (items, field) => {
     if (items.length < times) return false
-    const last = items.at(-1).values[field]
-    return items.slice(-times).every((item) => item.values[field] === last)
+    const last = String(items.at(-1).values[field])
+    return items.slice(-times).every((item) => String(item.values[field]) === last)
       ? `Too many similar values for ${field}`
       : false
   },
