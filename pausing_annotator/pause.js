@@ -1,38 +1,69 @@
-const rules = {
-  timesInARow: (times) => (items, field) => {
+/****** CONFIGURATION FOR PAUSING RULES ******/
+/**
+ * `fields` describe per-field rules in a format
+ *   <field-name>: [<rule>(<optional params for the rule>)]
+ * `global` is for rules applied to the whole annotation
+ */
+const RULES = {
+  fields: {
+    comment: [timesInARow(3)],
+    sentiment: [tooSimilar()],
+  },
+  global: [tooFast()],
+}
+/**
+ * Messages for users when they are paused.
+ * Each message is a function with the same name as original rule and it receives an object with
+ * `items` and `field`.
+ */
+const MESSAGES = {
+  timesInARow: ({ field }) => `Too many similar values for ${field}`,
+  tooSimilar: ({ field }) => `Too similar values for ${field}`,
+  tooFast: () => `Too fast annotations`,
+}
+
+
+
+/****** ALL AVAILABLE RULES ******/
+/**
+ * They recieve params and return function which recieves `items` and optional `field`.
+ * If condition is met it returns warning message. If not — returns `false`.
+ */
+
+// check if values for the `field` in last `times` items are the same
+function timesInARow(times) {
+  return (items, field) => {
     if (items.length < times) return false
     const last = String(items.at(-1).values[field])
     return items.slice(-times).every((item) => String(item.values[field]) === last)
-      ? `Too many similar values for ${field}`
+      ? MESSAGES.timesInARow({ items, field })
       : false
-  },
-  tooSimilar: (deviation = 0.1, max_count = 10) => (items, field) => {
+  };
+}
+function tooSimilar(deviation = 0.1, max_count = 10) {
+  return (items, field) => {
     if (items.length < max_count) return false
     const values = items.map((item) => item.values[field])
     const points = values.map((v) => values.indexOf(v))
     return calcDeviation(points) < deviation
-      ? `Too similar values for ${field}`
+      ? MESSAGES.tooSimilar({ items, field })
       : false
-  },
-  tooFast: (minutes = 10, times = 20) => (items) => {
+  };
+}
+function tooFast(minutes = 10, times = 20) {
+  return (items) => {
     if (items.length < times) return false
     const last = items.at(-1)
     const first = items.at(-times)
     return last.created_at - first.created_at < minutes * 60
-      ? `Too fast annotations`
+      ? MESSAGES.tooFast({ items })
       : false
-  }
+  };
 }
 
-/****** RULES FOR SUBMITTED ANNOTATIONS ******/
-const RULES = {
-  fields: {
-    comment: [rules.timesInARow(3)],
-    sentiment: [rules.tooSimilar()],
-  },
-  global: [rules.tooFast()],
-}
 
+
+/****** INTERNAL CODE ******/
 const project = DM.project.id
 if (!DM.project) return;
 
@@ -43,6 +74,7 @@ const values = Object.fromEntries(fields.map(
   (field) => [field, DM.project.parsed_label_config[field]?.labels],
 ))
 
+// simplified version of MSE with normalized x-axis
 function calcDeviation(data) {
   const n = data.length;
   // we normalize indices from -n/2 to n/2 so meanX is 0
@@ -72,9 +104,10 @@ LSI.on("submitAnnotation", (_store, ann) => {
   stats.push({ values, created_at: Date.now() / 1000 })
 
   for (const rule of RULES.global) {
-    if (rule(stats)) {
+    const result = rule(stats)
+    if (result) {
       localStorage.setItem(key, "[]");
-      pause("Wow, cowboy, not so fast!");
+      pause(result);
       return;
     }
   }
