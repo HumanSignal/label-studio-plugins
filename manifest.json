@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Bulk Labeling",
+    "description": "Bulk Labeling",
+    "path": "bulk_labeling",
+    "private": false
+  },
+  {
+    "title": "Textarea Wordcount",
+    "description": "Textarea Wordcount",
+    "path": "count_words_in_textarea",
+    "private": false
+  },
+  {
+    "title": "Send Prompt to LLM",
+    "description": "Connects to LLM Backend",
+    "path": "llm_backend",
+    "private": false
+  },
+  {
+    "title": "Markdown to HTML",
+    "description": "Converts markdown to HTML format",
+    "path": "markdown_to_html",
+    "private": false
+  },
+  {
+    "title": "NER Overlap Validations",
+    "description": "Prevents overlaps of NER labels",
+    "path": "ner_text-span-overlap_validation",
+    "private": false
+  },
+  {
+    "title": "Pausing Annotator",
+    "description": "Pausing Annotator",
+    "path": "pausing_annotator",
+    "private": false
+  },
+  {
+    "title": "Insert Plotly Chart",
+    "description": "Insert Plotly Chart",
+    "path": "plotly",
+    "private": false
+  },
+  {
+    "title": "Redact Pii",
+    "description": "Redact Pii",
+    "path": "redact_pii",
+    "private": false
+  },
+  {
+    "title": "Dynamic Image Swap",
+    "description": "Changes active image based on conditions",
+    "path": "show_different_images_based_on_label_selected",
+    "private": false
+  },
+  {
+    "title": "Spellcheck",
+    "description": "Validates misspelled text",
+    "path": "spellcheck",
+    "private": false
+  },
+  {
+    "title": "Validate JSON",
+    "description": "Validate JSON",
+    "path": "validate_json_in_textarea",
+    "private": false
+  }
+]
