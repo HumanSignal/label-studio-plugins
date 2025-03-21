@@ -1,5 +1,6 @@
-# Label Studio Custom Scripts
+![Label Studio Custom Scripts](docs/banner.png)
 
+# Label Studio Custom Scripts
 
 Welcome to **Label Studio Custom Scripts**! This repository contains `custom scripts` designed to extend the functionality of [Label Studio](https://labelstud.io), a powerful data labeling tool. These scripts can be used to automate workflows, integrate with external tools, and customize the labeling process according to your needs.
 
