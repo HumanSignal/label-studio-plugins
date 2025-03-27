@@ -1,38 +1,38 @@
 [
   {
     "title": "Bulk Labeling",
-    "description": "Bulk Labeling",
-    "path": "bulk_labeling",
+    "description": "Assigns labels to all occurrences of the selected text at once",
+    "path": "bulk-labeling",
     "private": false
   },
   {
     "title": "Textarea Wordcount",
-    "description": "Textarea Wordcount",
-    "path": "count_words_in_textarea",
+    "description": "Validates the length of a textarea based on its word count",
+    "path": "count-words-in-textarea",
     "private": false
   },
   {
     "title": "Send Prompt to LLM",
     "description": "Connects to LLM Backend",
-    "path": "llm_backend",
+    "path": "llm-backend",
     "private": false
   },
   {
     "title": "Markdown to HTML",
     "description": "Converts markdown to HTML format",
-    "path": "markdown_to_html",
+    "path": "markdown-to-html",
     "private": false
   },
   {
     "title": "NER Overlap Validations",
     "description": "Prevents overlaps of NER labels",
-    "path": "ner_text-span-overlap_validation",
+    "path": "ner-text-span-overlap-validation",
     "private": false
   },
   {
     "title": "Pausing Annotator",
-    "description": "Pausing Annotator",
-    "path": "pausing_annotator",
+    "description": "Pauses the annotator based on certain rules",
+    "path": "pausing-annotator",
     "private": false
   },
   {
@@ -42,15 +42,15 @@
     "private": false
   },
   {
-    "title": "Redact Pii",
-    "description": "Redact Pii",
-    "path": "redact_pii",
+    "title": "Redact PII",
+    "description": "Anonymize the annotator if no Admin permissions",
+    "path": "redact-pii",
     "private": false
   },
   {
     "title": "Dynamic Image Swap",
     "description": "Changes active image based on conditions",
-    "path": "show_different_images_based_on_label_selected",
+    "path": "different-images-per-label",
     "private": false
   },
   {
@@ -61,8 +61,8 @@
   },
   {
     "title": "Validate JSON",
-    "description": "Validate JSON",
-    "path": "validate_json_in_textarea",
+    "description": "Checks the introduced text is a valid JSON",
+    "path": "validate-json-in-textarea",
     "private": false
   }
 ]
