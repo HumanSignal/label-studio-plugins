@@ -1,0 +1,66 @@
+<View>
+    <Style>
+      .lsf-main-content.lsf-requesting .prompt::before { content: ' loading...'; color: #808080; }
+    	.placeholder { display: none; }
+      .llm_response textarea { background-color: #f0f0f0; /* Optional: gives a "disabled" feel */ }
+      .analyzeButton button {
+        background: #1890ff;
+        border-color: #1890ff;
+        box-shadow: 0 2px 0 rgba(0, 0, 0, .045);
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, .12);
+        padding: 4px 15px;
+      }
+    </Style>
+
+    <View className="placeholder">
+    	<Text name="placeholder" value="placeholder" />
+  	</View>
+
+    <Header value="Enter Prompt to Analyze:"/>
+    <TextArea
+      name="prompt"
+      toName="placeholder"
+      transcription="true"
+      showSubmitButton="false"
+      editable="true"
+      rows="4"
+      maxSubmissions="1"
+      placeholder="Type the prompt here..."
+    />
+    <View className="analyzeButton"></View>
+
+    <Header value="LLM Response:"/>
+    <View className="llm_response">
+      <TextArea
+        name="response"
+        toName="placeholder"
+        transcription="true"
+        rows="6"
+        showSubmitButton="false"
+        editable="false"
+        smart="false"
+        maxSubmissions="1"
+        placeholder="The LLM response will appear here..."
+      />
+    </View>
+
+    <Header value="Category:"/>
+    <Choices name="category" toName="placeholder" choice="single" showInLine="true">
+      <Choice value="none" />
+      <Choice value="cat1" />
+      <Choice value="cat2" />
+      <Choice value="cat3" />
+    </Choices>
+
+    <Header value="Reason"/>
+    <TextArea
+      name="reason"
+      toName="placeholder"
+      rows="2"
+      editable="false"
+      smart="false"
+      maxSubmissions="1"
+      placeholder="Write something here..."
+    />
+</View>

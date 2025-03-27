@@ -1,6 +1,0 @@
-{
-"data": {
-    "summary": "The user reported a 'Paper Jam' issue with the office printer. The LLM Agent provided troubleshooting steps that resolved the issue, avoiding the need for further maintenance.",
-    "chat_transcript": "**User**: The printer in the office is not working. Can you help troubleshoot?\n\n**LLM Agent**: I can help with that. Is the printer showing any error codes or messages on the display?\n\n**User**: It’s showing 'Paper Jam' but I’ve checked and there’s no paper stuck in there.\n\n**LLM Agent**: Sometimes the sensors in the printer may still think there’s a jam after clearing it. Let’s try turning the printer off for a minute and turning it back on. That should reset the sensors.\n\n**User**: Okay, let me try that... It worked! The error message is gone now.\n\n**LLM Agent**: Great! If you encounter the issue again, let me know. I can also file a maintenance ticket if the problem persists.\n\n**User**: Will do, thanks for your help!"
-  }
-}
