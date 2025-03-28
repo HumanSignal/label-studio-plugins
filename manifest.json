@@ -48,7 +48,7 @@
     "private": false
   },
   {
-    "title": "Dynamic Image Swap",
+    "title": "Dynamic image swap",
     "description": "Changes active image based on conditions",
     "path": "different-images-per-label",
     "private": false
