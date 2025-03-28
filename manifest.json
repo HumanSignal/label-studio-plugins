@@ -1,6 +1,6 @@
 [
   {
-    "title": "Label duplicate text",
+    "title": "Bulk labeling for text spans",
     "description": "Assigns labels to all occurrences of the selected text at once",
     "path": "bulk-labeling",
     "private": false
@@ -12,8 +12,8 @@
     "private": false
   },
   {
-    "title": "Send prompt to LLM",
-    "description": "Connects to an LLM backend",
+    "title": "Connect to LLM backend",
+    "description": "Sends prompts to an LLM URL",
     "path": "llm-backend",
     "private": false
   },
@@ -24,26 +24,26 @@
     "private": false
   },
   {
-    "title": "NER overlap validation",
-    "description": "Prevents overlap of NER labels",
+    "title": "Text span overlap validation",
+    "description": "Prevents overlap of text spans",
     "path": "ner-text-span-overlap-validation",
     "private": false
   },
   {
-    "title": "Pause annotator",
+    "title": "Spam and bot detection",
     "description": "Pauses an annotator if bot behavior in detected",
     "path": "pausing-annotator",
     "private": false
   },
   {
-    "title": "Insert Plotly chart",
+    "title": "Data visualization",
     "description": "Display a Plotly chart to annotators",
     "path": "plotly",
     "private": false
   },
   {
-    "title": "Redact PII",
-    "description": "Anonymize the annotator if no Admin permissions",
+    "title": "Redact annotator PII",
+    "description": "Anonymize the annotator to reduce bias",
     "path": "redact-pii",
     "private": false
   },
