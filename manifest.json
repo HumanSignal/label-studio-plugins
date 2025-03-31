@@ -1,19 +1,19 @@
 [
   {
-    "title": "Bulk Labeling",
+    "title": "Bulk labeling for text spans",
     "description": "Assigns labels to all occurrences of the selected text at once",
     "path": "bulk-labeling",
     "private": false
   },
   {
-    "title": "Textarea Wordcount",
-    "description": "Validates the length of a textarea based on its word count",
+    "title": "Text area word count",
+    "description": "Validates the length of a text area based on its word count",
     "path": "count-words-in-textarea",
     "private": false
   },
   {
-    "title": "Send Prompt to LLM",
-    "description": "Connects to LLM Backend",
+    "title": "Connect to LLM backend",
+    "description": "Sends prompts to an LLM URL",
     "path": "llm-backend",
     "private": false
   },
@@ -24,31 +24,31 @@
     "private": false
   },
   {
-    "title": "NER Overlap Validations",
-    "description": "Prevents overlaps of NER labels",
+    "title": "Text span overlap validation",
+    "description": "Prevents overlap of text spans",
     "path": "ner-text-span-overlap-validation",
     "private": false
   },
   {
-    "title": "Pausing Annotator",
-    "description": "Pauses the annotator based on certain rules",
+    "title": "Spam and bot detection",
+    "description": "Pauses an annotator if bot behavior in detected",
     "path": "pausing-annotator",
     "private": false
   },
   {
-    "title": "Insert Plotly Chart",
-    "description": "Insert Plotly Chart",
+    "title": "Data visualization",
+    "description": "Display a Plotly chart to annotators",
     "path": "plotly",
     "private": false
   },
   {
-    "title": "Redact PII",
-    "description": "Anonymize the annotator if no Admin permissions",
+    "title": "Redact annotator PII",
+    "description": "Anonymize the annotator to reduce bias",
     "path": "redact-pii",
     "private": false
   },
   {
-    "title": "Dynamic Image Swap",
+    "title": "Dynamic image swap",
     "description": "Changes active image based on conditions",
     "path": "different-images-per-label",
     "private": false
@@ -61,7 +61,7 @@
   },
   {
     "title": "Validate JSON",
-    "description": "Checks the introduced text is a valid JSON",
+    "description": "Checks that the introduced text is a valid JSON",
     "path": "validate-json-in-textarea",
     "private": false
   }
