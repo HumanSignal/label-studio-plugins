@@ -159,7 +159,7 @@ LSI.on("submitAnnotation", async (_store, annotation) => {
  */
 async function pause(verbose_reason) {
   const body = {
-    reason: "CUSTOM_SCRIPT",
+    reason: "PLUGIN",
     verbose_reason,
   }
   const options = {

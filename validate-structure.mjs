@@ -5,9 +5,9 @@ import { join } from 'path'
 
 const ROOT_DIR = process.cwd()
 const MANIFEST_FILE = join(ROOT_DIR, 'manifest.json')
-const SCRIPT_FILENAME = 'script.js'
+const PLUGIN_FILENAME = 'plugin.js'
 const VIEW_FILENAME = 'view.xml'
-const CUSTOM_SCRIPTS_DIR = join(ROOT_DIR, 'custom-scripts')
+const PLUGINS_DIR = join(ROOT_DIR, 'plugins')
 
 const validateStructure = () => {
   if (!existsSync(MANIFEST_FILE)) {
@@ -22,22 +22,22 @@ const validateStructure = () => {
     process.exit(1)
   }
 
-  if (!existsSync(CUSTOM_SCRIPTS_DIR)) {
-    console.error('Missing custom-scripts directory')
+  if (!existsSync(PLUGINS_DIR)) {
+    console.error('Missing plugins directory')
     process.exit(1)
   }
 
-  const folders = readdirSync(CUSTOM_SCRIPTS_DIR, { withFileTypes: true })
+  const folders = readdirSync(PLUGINS_DIR, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name)
 
   const errors = []
 
   folders.forEach(folder => {
-    const scriptFile = join(CUSTOM_SCRIPTS_DIR, folder, SCRIPT_FILENAME)
-    const viewFile = join(CUSTOM_SCRIPTS_DIR, folder, 'view.xml')
+    const pluginFile = join(PLUGINS_DIR, folder, PLUGIN_FILENAME)
+    const viewFile = join(PLUGINS_DIR, folder, 'view.xml')
 
-    if (!existsSync(scriptFile)) errors.push(`Missing ${SCRIPT_FILENAME} in "${folder}"`)
+    if (!existsSync(pluginFile)) errors.push(`Missing ${PLUGIN_FILENAME} in "${folder}"`)
     if (!existsSync(viewFile)) errors.push(`Missing ${VIEW_FILENAME} in "${folder}"`)
 
     const manifestEntry = manifest.find((entry) => entry.path === folder)

@@ -5,7 +5,7 @@
 
 const IMG_ID = 'img_uniq'
 // TODO: use your own keys and values here for label lookup and data objects to display
-const imagesRoot = '/static/custom-scripts/custom-scripts/different-images-per-label/img'
+const imagesRoot = '/static/plugins/different-images-per-label/img'
 const images = {
   'Addressee': `${imagesRoot}/demo-addressee.jpg`,
   'Account number': `${imagesRoot}/demo-routing-number.png`,

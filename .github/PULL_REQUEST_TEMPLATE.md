@@ -9,7 +9,7 @@
 ## Checklist
 
 - [ ] I have tested the changes in the Label Studio Labeling Config.
-- [ ] I have added the `script.js` file.
+- [ ] I have added the `plugin.js` file.
 - [ ] I have added the `view.xml` file.
 - [ ] My code follows the guidelines stated in the README.md.
 
