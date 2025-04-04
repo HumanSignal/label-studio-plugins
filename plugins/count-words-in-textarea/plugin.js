@@ -5,18 +5,22 @@
 let dismissed = false;
 
 LSI.on("beforeSaveAnnotation", (store, annotation) => {
-  const textAreaResult = annotation.results.find(r => r.type === 'textarea' && r.from_name.name === 'textarea');
+	const textAreaResult = annotation.results.find(
+		(r) => r.type === "textarea" && r.from_name.name === "textarea",
+	);
 
-  if (textAreaResult) {
-    words = textAreaResult.value.text[0]
-    word_count = words.split(" ").length;
+	if (textAreaResult) {
+		words = textAreaResult.value.text[0];
+		word_count = words.split(" ").length;
 
-    if (word_count > 10) {
-      Htx.showModal("Word count is " + word_count + ". Please reduce to 10 or less.");
-      dismissed = true;
-      return false; // Block submission
-    }
-  }
+		if (word_count > 10) {
+			Htx.showModal(
+				"Word count is " + word_count + ". Please reduce to 10 or less.",
+			);
+			dismissed = true;
+			return false; // Block submission
+		}
+	}
 
-  return true; // Allow submission
+	return true; // Allow submission
 });

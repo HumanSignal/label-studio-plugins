@@ -1,4 +1,4 @@
-name: Validate Folder Structure
+name: Validate Plugins
 
 on:
   push:
@@ -7,7 +7,8 @@ on:
     branches: ["**"]
 
 jobs:
-  check-structure:
+  validate-structure:
+    name: Validate File Structure
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -20,3 +21,17 @@ jobs:
 
       - name: Run Folder Structure Check
         run: node validate-structure.mjs
+  linting:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
+        with:
+          version: latest
+
+      - name: Run Biome
+        run: biome ci .
