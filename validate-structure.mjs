@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync, readdirSync } from "fs";
-import { join } from "path";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
 
 const ROOT_DIR = process.cwd();
 const MANIFEST_FILE = join(ROOT_DIR, "manifest.json");
@@ -34,37 +34,40 @@ const validateStructure = () => {
 
 	const errors = [];
 
-	folders.forEach((folder) => {
+	for (const folder of folders) {
 		const pluginFile = join(PLUGINS_DIR, folder, PLUGIN_FILENAME);
 		const viewFile = join(PLUGINS_DIR, folder, VIEW_FILENAME);
 		const dataFile = join(PLUGINS_DIR, folder, DATA_FILENAME);
 
-		if (!existsSync(pluginFile))
+		if (!existsSync(pluginFile)) {
 			errors.push(`Missing ${PLUGIN_FILENAME} in "${folder}"`);
-		if (!existsSync(viewFile))
+		}
+		if (!existsSync(viewFile)) {
 			errors.push(`Missing ${VIEW_FILENAME} in "${folder}"`);
-		if (!existsSync(dataFile))
+		}
+		if (!existsSync(dataFile)) {
 			errors.push(`Missing ${DATA_FILENAME} in "${folder}"`);
+		}
 
 		const manifestEntry = manifest.find((entry) => entry.path === folder);
 
 		if (!manifestEntry) {
 			errors.push(`Folder "${folder}" is missing in manifest.json`);
-		} else {
-			if (
-				!manifestEntry.title ||
-				!manifestEntry.description ||
-				typeof manifestEntry.private !== "boolean"
-			) {
-				errors.push(
-					`Invalid manifest entry for "${folder}". It must have a title, description, private flag, and path.`,
-				);
-			}
+		} else if (
+			!manifestEntry.title ||
+			!manifestEntry.description ||
+			typeof manifestEntry.private !== "boolean"
+		) {
+			errors.push(
+				`Invalid manifest entry for "${folder}". It must have a title, description, private flag, and path.`,
+			);
 		}
-	});
+	}
 
 	if (errors.length > 0) {
-		errors.forEach((error) => console.error(error));
+		for (const error of errors) {
+			console.error(error);
+		}
 		process.exit(1);
 	}
 

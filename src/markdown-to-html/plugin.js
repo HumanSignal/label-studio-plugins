@@ -6,10 +6,10 @@ window.LSI = LSI;
 
 await LSI.import("https://unpkg.com/showdown/dist/showdown.min.js");
 
-let sumBlock = document.querySelector(".lsf-richtext");
+const sumBlock = document.querySelector(".lsf-richtext");
 
 if (sumBlock) {
-	var converter = new showdown.Converter();
-	var html = converter.makeHtml(LSI.task.data.chat_transcript);
+	const converter = new showdown.Converter();
+	const html = converter.makeHtml(LSI.task.data.chat_transcript);
 	sumBlock.innerHTML = html;
 }

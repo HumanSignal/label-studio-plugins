@@ -15,7 +15,7 @@ LSI.on("beforeSaveAnnotation", (store, annotation) => {
 
 		if (word_count > 10) {
 			Htx.showModal(
-				"Word count is " + word_count + ". Please reduce to 10 or less.",
+				`Word count is ${word_count}. Please reduce to 10 or less.`,
 			);
 			dismissed = true;
 			return false; // Block submission

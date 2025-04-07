@@ -30,7 +30,7 @@ async function fetchUserInfo() {
 function displayEl(sel) {
 	const els = document.querySelectorAll(sel);
 	if (els) {
-		els.forEach(function (el, idx) {
+		els.forEach((el, idx) => {
 			el.style.display = "block";
 		});
 	}
@@ -41,7 +41,8 @@ function displayEl(sel) {
  * the annotator identity
  */
 async function hidePII() {
-	let user, role;
+	let user;
+	let role;
 	try {
 		const userInfo = await fetchUserInfo();
 		user = userInfo.username || "Unknown";

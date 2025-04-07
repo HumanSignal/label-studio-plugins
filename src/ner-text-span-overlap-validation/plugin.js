@@ -15,7 +15,7 @@ LSI.on("beforeSaveAnnotation", (store, annotation) => {
 	// console.log(textRegions);  // Print the filtered result
 	textRegions.sort((a, b) => a.startOffset - b.startOffset);
 
-	let overlaps = [];
+	const overlaps = [];
 
 	// Check for overlaps
 	for (let i = 0; i < textRegions.length - 1; i++) {

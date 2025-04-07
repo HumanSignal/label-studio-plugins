@@ -53,7 +53,7 @@ async function sendPrompt() {
 	}
 	const results = [];
 
-	const llmResponse = llmResponse["LLM_response"];
+	const llmResponse = response.LLM_response;
 	if (llmResponse) {
 		const llmResult = {
 			from_name: "response",
@@ -65,7 +65,7 @@ async function sendPrompt() {
 	}
 	// console.log("Response:" + llmResponse["LLM_response"]);
 
-	const category = llmResponse["Category"]?.category;
+	const category = response.Category?.category;
 	if (category?.length) {
 		const attackResult = {
 			from_name: "category",
@@ -77,7 +77,7 @@ async function sendPrompt() {
 		// console.log("Category:" + category);
 	}
 
-	const reasonText = llmResponse["Type"]?.reason;
+	const reasonText = response.Type?.reason;
 	if (reasonText) {
 		const reasonResult = {
 			from_name: "reason",

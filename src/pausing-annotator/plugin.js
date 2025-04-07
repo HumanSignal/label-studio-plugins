@@ -27,7 +27,7 @@ const RULES = {
 const MESSAGES = {
 	timesInARow: ({ field }) => `Too many similar values for ${field}`,
 	tooSimilar: ({ field }) => `Too similar values for ${field}`,
-	tooFast: () => `Too fast annotations`,
+	tooFast: () => "Too fast annotations",
 };
 
 /**
@@ -115,23 +115,25 @@ LSI.on("submitAnnotation", async (_store, annotation) => {
 	const results = annotation.serializeAnnotation();
 	// { sentiment: "positive", comment: "good" }
 	const values = {};
-	fields.forEach((field) => {
+	for (const field of fields) {
 		const value = results.find((r) => r.from_name === field)?.value;
 		if (!value) return;
 		if (value.choices) values[field] = value.choices.join("|");
 		else if (value.text) values[field] = value.text;
-	});
+	}
 	let stats = [];
 	try {
 		stats = JSON.parse(localStorage.getItem(key)) ?? [];
-	} catch (e) {}
+	} catch (e) {
+		// Ignore parse errors
+	}
 	stats.push({ values, created_at: Date.now() / 1000 });
 
 	for (const rule of RULES.global) {
 		const result = rule(stats);
 		if (result) {
 			localStorage.setItem(key, "[]");
-			pause(result);
+			await pause(result);
 			return;
 		}
 	}
@@ -148,9 +150,8 @@ LSI.on("submitAnnotation", async (_store, annotation) => {
 					await pause(result);
 				} catch (error) {
 					Htx.showModal(error.message, "error");
-				} finally {
-					return false;
 				}
+				return;
 			}
 		}
 	}
