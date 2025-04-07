@@ -6,6 +6,7 @@
     .lsf-annotation-button__date { display: none; }
     .lsf-comment-item__name { display: none; }
     .lsf-comment-item__date { display: none; }
+    .lsf-comment-item__userpic { display: none; }
     .lsf-history-item__name { display: none; }
     .lsf-history-item__date { display: none; }
   </Style>
