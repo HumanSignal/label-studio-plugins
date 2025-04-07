@@ -12,7 +12,7 @@ examples in this repo to get started.
 ## Official Documentation
 
 For detailed documentation and guides on how to use and extend Label Studio with plugins, visit the official
-[Label Studio Plugins Documentation](https://docs.humansignal.com/guide/scripts).
+[Label Studio Plugins Documentation](https://docs.humansignal.com/guide/plugins).
 
 ## File Structure
 
@@ -20,7 +20,7 @@ This repository follows a clear folder structure to organize the various plugins
 
 ```bash
 label-studio-plugins/
-├── plugins/
+├── src/
 │   ├── plugin1/
 │   │   ├── data.{json|mp3|mp4}
 │   │   ├── plugin.js
@@ -34,8 +34,8 @@ label-studio-plugins/
 ```
 
 - **`/plugin1`**: Contains all the files to document a plugin.
-  - Each plugin has a `plugin.js` and `view.xml` file that define the logic and UI of the plugin.
-- **`/plugin.js`**: Contains the actual plugin `javascript` file that can be embedded in the Label Studio code editor.
+  - Each plugin has `plugin.js`, `view.xml`, and `data.json` files that define the logic, UI, and data of the plugin.
+- **`/plugin.js`**: Contains the actual `javascript` plugin file that can be embedded in the Label Studio code editor.
 - **`/view.xml`**: Stores an example of a `<View>` that will work along the plugin.
 - **`/data.{json|mp3|mp4}`**: Stores an example of the data that can be used along with the plugin.
 - **`manifest.json`**: This file lists the plugins, their metadata (title, description, etc.), and their paths for easy integration with Label Studio.

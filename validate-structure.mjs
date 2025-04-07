@@ -8,7 +8,7 @@ const MANIFEST_FILE = join(ROOT_DIR, "manifest.json");
 const PLUGIN_FILENAME = "plugin.js";
 const VIEW_FILENAME = "view.xml";
 const DATA_FILENAME = "data.json";
-const PLUGINS_DIR = join(ROOT_DIR, "plugins");
+const PLUGINS_DIR = join(ROOT_DIR, "src");
 
 const validateStructure = () => {
 	if (!existsSync(MANIFEST_FILE)) {
@@ -24,7 +24,7 @@ const validateStructure = () => {
 	}
 
 	if (!existsSync(PLUGINS_DIR)) {
-		console.error("Missing plugins directory");
+		console.error("Missing src directory");
 		process.exit(1);
 	}
 
