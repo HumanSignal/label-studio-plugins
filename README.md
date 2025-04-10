@@ -9,6 +9,8 @@ integrate with external tools, and customize the labeling process according to y
 Whether you're building custom data processors, integrations, or UI components, you'll find the necessary resources and
 examples in this repo to get started.
 
+> **Note**: Plugins are an `Enterprise` feature and require a [Label Studio Enterprise](https://humansignal.com/pricing/) subscription to use.
+
 ## Official Documentation
 
 For detailed documentation and guides on how to use and extend Label Studio with plugins, visit the official
