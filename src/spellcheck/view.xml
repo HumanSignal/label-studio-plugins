@@ -1,0 +1,32 @@
+<View>
+  <Text name="text" value="$text"/>
+  <View style="box-shadow: 2px 2px 5px #999; padding: 20px; margin: 2em 0.25em; border-radius: 5px;">
+    <Header value="Choose text sentiment"/>
+    <Choices name="sentiment" toName="text" choice="single" showInLine="true">
+      <Choice value="Positive"/>
+      <Choice value="Negative"/>
+      <Choice value="Neutral"/>
+    </Choices>
+  </View>
+  <View>
+    <TextArea
+      name="response"
+      toName="text"
+      placeholder="Sample TextArea"
+      showSubmitButton="false"
+      maxSubmissions="1"
+      editable="false"
+      required="false"
+      rows="2"
+      transcription="false"
+    />
+  </View>
+</View>
+
+<!--
+{
+  "data": {
+    "text": "This is a great 3D movie that delivers everything almost right in your face."
+  }
+}
+-->

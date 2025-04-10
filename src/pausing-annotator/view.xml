@@ -1,0 +1,57 @@
+<View>
+  <Text name="text" value="$text"/>
+  <View style="box-shadow: 2px 2px 5px #999; padding: 20px; margin-top: 2em; border-radius: 5px;">
+
+    <Header value="What is the sentiment of this text?" />
+    <Choices name="sentiment" toName="text" choice="single" showInLine="true">
+      <Choice value="positive" hotkey="1" />
+      <Choice value="negative" hotkey="2" />
+      <Choice value="neutral" hotkey="3" />
+    </Choices>
+
+    <Header value="Why?" />
+    <TextArea name="comment" toName="text" rows="4" placeholder="Add your comment here..." />
+
+  </View>
+</View>
+<!--
+{
+  "data": {
+    "text": "This is a great movie!"
+  }
+}
+-->
+
+<!-- Explanation:
+This labeling configuration is designed to allow annotators to
+evaluate the sentiment of a given text while also providing an option
+for additional comments. The configuration includes the following key
+components:
+
+1. **Text Tag**: The `<Text>` tag displays the text that
+needs to be annotated. It binds to the `value` parameter using the
+variable `$text`, which will be populated with the actual text data
+during annotation.
+
+2. **Header Tag**: The `<Header>` tag provides a
+title or instruction for the annotators, indicating that they should
+choose the sentiment of the text.
+
+3. **Choices Tag**: The `<Choices>`
+tag allows annotators to select a sentiment from predefined options.
+In this case, the choices are "Positive" and "Negative". The `toName`
+attribute links this choice to the `text` object, ensuring that the
+sentiment is directly associated with the displayed text.
+
+4.
+**TextArea Tag**: The `<TextArea>` tag is added to allow annotators to
+provide additional comments or feedback related to their sentiment
+choice. This tag is also linked to the `text` object, ensuring that
+all annotations are connected to the same text input. The `rows`
+attribute specifies the height of the text area, and the `placeholder`
+attribute provides a hint to the annotators about what to enter.
+
+Overall, this configuration enhances the annotation process by
+allowing for both sentiment classification and qualitative feedback,
+making it a comprehensive tool for text analysis.
+-->
