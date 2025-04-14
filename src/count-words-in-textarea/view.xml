@@ -1,0 +1,13 @@
+<View>
+  <Header value="Classify the text in less than 10 words"/>
+  <Text name="text" value="$text"/>
+  <TextArea name="textarea" toName="text" />
+</View>
+
+<!--
+{
+  "data": {
+	  "text": "The quick brown fox jumps over the lazy dog.",
+  }
+}
+-->

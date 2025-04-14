@@ -1,9 +1,0 @@
-<View>
-  <Text name="function" value="Is it increasing?" />
-  <Choices name="slope" toName="function">
-    <Choice value="Increasing" />
-    <Choice value="Decreasing" />
-    <Choice value="Non-monotonic" />
-  </Choices>
-  <View idAttr="plot"/>
-</View>

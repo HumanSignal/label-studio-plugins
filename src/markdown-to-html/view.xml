@@ -1,0 +1,50 @@
+<View>
+  <Style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .left-column {
+      width: 60%;
+    }
+    .right-column {
+      width: 35%;
+      margin-left: 20px;
+    }
+    .summary-box {
+      padding: 10px;
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  </Style>
+
+  <View className="container">
+    <!-- Left Column: Chat Transcript -->
+    <View className="left-column summaryBlock">
+      <Header value="Chat Transcript" />
+      <!-- Use Text tag to display the markdown content of the conversation -->
+      <Text name="chat_transcript" value="$chat_transcript" markdown="true" />
+    </View>
+
+    <!-- Right Column: Classification Options -->
+    <View className="right-column">
+
+		<Header value="Classify chat Quality" />
+      <!-- Relevance of the summary -->
+      <Choices name="relevance" toName="chat_transcript" required="true">
+        <Choice value="Highly quality" />
+        <Choice value="Bad quality" />
+      </Choices>
+    </View>
+  </View>
+</View>
+
+<!--
+{
+  "data": {
+    "chat_transcript": "**User**: The printer in the office is not working. Can you help troubleshoot?\n\n**LLM Agent**: I can help with that. Is the printer showing any error codes or messages on the display?\n\n**User**: It’s showing 'Paper Jam' but I’ve checked and there’s no paper stuck in there.\n\n**LLM Agent**: Sometimes the sensors in the printer may still think there’s a jam after clearing it. Let’s try turning the printer off for a minute and turning it back on. That should reset the sensors.\n\n**User**: Okay, let me try that... It worked! The error message is gone now.\n\n**LLM Agent**: Great! If you encounter the issue again, let me know. I can also file a maintenance ticket if the problem persists.\n\n**User**: Will do, thanks for your help!"
+  }
+}
+-->

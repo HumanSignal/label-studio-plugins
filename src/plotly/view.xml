@@ -1,0 +1,21 @@
+<View>
+  <Text name="function" value="Is it increasing?" />
+  <Choices name="slope" toName="function">
+    <Choice value="Increasing" />
+    <Choice value="Decreasing" />
+    <Choice value="Non-monotonic" />
+  </Choices>
+  <View idAttr="plot"/>
+</View>
+
+<!--
+{
+  "data": {
+    "plotly": {
+        "x": [ 1, 2, 3, 4 ],
+        "y": [ 10, 15, 13, 17 ],
+        "type": "scatter"
+    }
+  }
+}
+-->
