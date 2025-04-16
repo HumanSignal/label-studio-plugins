@@ -3,7 +3,8 @@
  *
  * This plugin monitors text entered into TextArea regions and checks for the word "hate"
  * before allowing the annotation to be saved. If found, it shows an error message and
- * prevents submission.
+ * prevents submission. This would happen only once, if user clicks Submit again it would
+ * work with no errors.
  *
  * The plugin uses Label Studio's beforeSaveAnnotation event which is triggered before
  * an annotation is saved. Returning false from this event handler prevents the save

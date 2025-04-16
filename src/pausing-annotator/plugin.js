@@ -136,8 +136,7 @@ LSI.on("submitAnnotation", async (_store, annotation) => {
 			localStorage.setItem(key, "[]");
 
 			try {
-				const response = await pause(result);
-				Htx.showModal(`Annotation paused: ${response.verbose_reason}`, "info");
+				await pause(result);
 			} catch (error) {
 				Htx.showModal(error.message, "error");
 			}
@@ -154,11 +153,7 @@ LSI.on("submitAnnotation", async (_store, annotation) => {
 				localStorage.setItem(key, "[]");
 
 				try {
-					const response = await pause(result);
-					Htx.showModal(
-						`Annotation paused: ${response.verbose_reason}`,
-						"info",
-					);
+					await pause(result);
 				} catch (error) {
 					Htx.showModal(error.message, "error");
 				}
