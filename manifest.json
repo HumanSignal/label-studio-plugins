@@ -1,7 +1,7 @@
 [
 	{
-		"title": "Bulk labeling for text spans",
-		"description": "Assigns labels to all occurrences of the selected text at once",
+		"title": "Bulk labeling for text spans with keyboard shortcuts",
+		"description": "Assigns labels to all occurrences of the selected text at once and removes them",
 		"path": "bulk-labeling",
 		"private": false
 	},
@@ -63,6 +63,18 @@
 		"title": "Validate JSON",
 		"description": "Checks that the introduced text is a valid JSON",
 		"path": "validate-json-in-textarea",
+		"private": false
+	},
+	{
+		"title": "Simple content moderation",
+		"description": "Prevents saving annotations containing inappropriate content",
+		"path": "simple-content-moderation",
+		"private": false
+	},
+	{
+		"title": "Multi-frame video view",
+		"description": "Synchronizes multiple video views to display a video with different frame offsets",
+		"path": "multi-frame-video-view",
 		"private": false
 	}
 ]

@@ -131,9 +131,15 @@ LSI.on("submitAnnotation", async (_store, annotation) => {
 
 	for (const rule of RULES.global) {
 		const result = rule(stats);
+
 		if (result) {
 			localStorage.setItem(key, "[]");
-			await pause(result);
+
+			try {
+				await pause(result);
+			} catch (error) {
+				Htx.showModal(error.message, "error");
+			}
 			return;
 		}
 	}
@@ -164,7 +170,7 @@ LSI.on("submitAnnotation", async (_store, annotation) => {
  */
 async function pause(verbose_reason) {
 	const body = {
-		reason: "PLUGIN",
+		reason: "CUSTOM_SCRIPT",
 		verbose_reason,
 	};
 	const options = {
