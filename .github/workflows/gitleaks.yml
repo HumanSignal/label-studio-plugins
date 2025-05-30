@@ -56,8 +56,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
-          token: ${{ secrets.GIT_PAT }}
+          token: ${{ github.token }}
           fetch-depth: 0
 
       - name: Run gitleaks
