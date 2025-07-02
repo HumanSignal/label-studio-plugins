@@ -78,7 +78,7 @@
     "private": false
   },
   {
-    "title": "Dynamic text spans",
+    "title": "Dynamic text tags from textarea",
     "description": "Dynamically populates a text box given the input of a text area tag for span based labeling",
     "path": "dynamic-text-spans",
     "private": false
