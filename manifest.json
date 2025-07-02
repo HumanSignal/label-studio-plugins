@@ -1,80 +1,86 @@
 [
-	{
-		"title": "Bulk labeling for text spans with keyboard shortcuts",
-		"description": "Assigns labels to all occurrences of the selected text at once and removes them",
-		"path": "bulk-labeling",
-		"private": false
-	},
-	{
-		"title": "Text area word count",
-		"description": "Validates the length of a text area based on its word count",
-		"path": "count-words-in-textarea",
-		"private": false
-	},
-	{
-		"title": "Connect to LLM backend",
-		"description": "Sends prompts to an LLM URL",
-		"path": "llm-backend",
-		"private": false
-	},
-	{
-		"title": "Markdown to HTML",
-		"description": "Converts markdown to HTML format",
-		"path": "markdown-to-html",
-		"private": false
-	},
-	{
-		"title": "Text span overlap validation",
-		"description": "Prevents overlap of text spans",
-		"path": "ner-text-span-overlap-validation",
-		"private": false
-	},
-	{
-		"title": "Spam and bot detection",
-		"description": "Pauses an annotator if bot behavior in detected",
-		"path": "pausing-annotator",
-		"private": false
-	},
-	{
-		"title": "Data visualization",
-		"description": "Display a Plotly chart to annotators",
-		"path": "plotly",
-		"private": false
-	},
-	{
-		"title": "Redact annotator PII",
-		"description": "Anonymize the annotator to reduce bias",
-		"path": "redact-pii",
-		"private": false
-	},
-	{
-		"title": "Dynamic image swap",
-		"description": "Changes active image based on conditions",
-		"path": "different-images-per-label",
-		"private": false
-	},
-	{
-		"title": "Spellcheck",
-		"description": "Validates misspelled text",
-		"path": "spellcheck",
-		"private": false
-	},
-	{
-		"title": "Validate JSON",
-		"description": "Checks that the introduced text is a valid JSON",
-		"path": "validate-json-in-textarea",
-		"private": false
-	},
-	{
-		"title": "Simple content moderation",
-		"description": "Prevents saving annotations containing inappropriate content",
-		"path": "simple-content-moderation",
-		"private": false
-	},
-	{
-		"title": "Multi-frame video view",
-		"description": "Synchronizes multiple video views to display a video with different frame offsets",
-		"path": "multi-frame-video-view",
-		"private": false
-	}
+  {
+    "title": "Bulk labeling for text spans with keyboard shortcuts",
+    "description": "Assigns labels to all occurrences of the selected text at once and removes them",
+    "path": "bulk-labeling",
+    "private": false
+  },
+  {
+    "title": "Text area word count",
+    "description": "Validates the length of a text area based on its word count",
+    "path": "count-words-in-textarea",
+    "private": false
+  },
+  {
+    "title": "Connect to LLM backend",
+    "description": "Sends prompts to an LLM URL",
+    "path": "llm-backend",
+    "private": false
+  },
+  {
+    "title": "Markdown to HTML",
+    "description": "Converts markdown to HTML format",
+    "path": "markdown-to-html",
+    "private": false
+  },
+  {
+    "title": "Text span overlap validation",
+    "description": "Prevents overlap of text spans",
+    "path": "ner-text-span-overlap-validation",
+    "private": false
+  },
+  {
+    "title": "Spam and bot detection",
+    "description": "Pauses an annotator if bot behavior in detected",
+    "path": "pausing-annotator",
+    "private": false
+  },
+  {
+    "title": "Data visualization",
+    "description": "Display a Plotly chart to annotators",
+    "path": "plotly",
+    "private": false
+  },
+  {
+    "title": "Redact annotator PII",
+    "description": "Anonymize the annotator to reduce bias",
+    "path": "redact-pii",
+    "private": false
+  },
+  {
+    "title": "Dynamic image swap",
+    "description": "Changes active image based on conditions",
+    "path": "different-images-per-label",
+    "private": false
+  },
+  {
+    "title": "Spellcheck",
+    "description": "Validates misspelled text",
+    "path": "spellcheck",
+    "private": false
+  },
+  {
+    "title": "Validate JSON",
+    "description": "Checks that the introduced text is a valid JSON",
+    "path": "validate-json-in-textarea",
+    "private": false
+  },
+  {
+    "title": "Simple content moderation",
+    "description": "Prevents saving annotations containing inappropriate content",
+    "path": "simple-content-moderation",
+    "private": false
+  },
+  {
+    "title": "Multi-frame video view",
+    "description": "Synchronizes multiple video views to display a video with different frame offsets",
+    "path": "multi-frame-video-view",
+    "private": false
+  },
+  {
+    "title": "Dynamic text spans",
+    "description": "Dynamically populates a text box given the input of a text area tag for span based labeling",
+    "path": "dynamic-text-spans",
+    "private": false
+  }
 ]

@@ -1,0 +1,17 @@
+{
+  "name": "label-studio-plugins",
+  "version": "1.0.0",
+  "description": "Plugins to extend Label Studio with custom workflows, integrations, and UI components.",
+  "main": "index.js",
+  "repository": "git@github.com:HumanSignal/label-studio-plugins.git",
+  "author": "Ignacio Velazquez <ignacio@humansignal.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "biome check --write ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.6"
+  }
+}
