@@ -1,0 +1,45 @@
+<View>
+  <Header value="1. Transcribe the audio below:"/>
+  <Audio name="audio" value="$audio" zoom="true" hotkey="ctrl+enter"/>
+
+  <TextArea
+    name="transcription"
+    toName="audio"
+    rows="4"
+    editable="true"
+    maxSubmissions="1"
+    showSubmitButton="false"
+    value="$text"
+  />
+
+  <Header value="2. Extract spans from the transcript:"/>
+  <!-- force HyperText into the DOM via non-breaking space -->
+  <View idAttr="extractionBlock">
+    <Text
+      name="extraction_text"
+      idAttr="extractionText"
+      value="$transcription"
+      inline="false"
+    />
+  </View>
+
+  <Labels
+    name="span_labels"
+    toName="extraction_text"
+    choice="multiple"
+    showInline="true"
+  >
+    <Label value="EntityType1" background="#8cc6ff"/>
+    <Label value="EntityType2" background="#ffa39e"/>
+  </Labels>
+</View>
+
+<!--
+{
+	"data": {
+		"audio": "https://data.heartex.net/librispeech/dev-clean/3536/8226/3536-8226-0024.flac.wav",
+		"transcription": "",
+		"text": "this is a test"
+	}
+}
+-->

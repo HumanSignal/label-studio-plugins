@@ -1,5 +1,5 @@
 {
-	"data": {
-		"video_url": "https://example.com/path/to/video.mp4"
-	}
+  "data": {
+    "video_url": "https://example.com/path/to/video.mp4"
+  }
 }

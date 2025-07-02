@@ -13,19 +13,16 @@
 
 let dismissed = false;
 
-LSI.on("beforeSaveAnnotation", (store, ann) => {
-	// text in TextArea is always an array
-	const obscene = ann.results.find(
-		(r) =>
-			r.type === "textarea" && r.value.text.some((t) => t.includes("hate")),
-	);
-	if (!obscene || dismissed) return true;
+LSI.on("beforeSaveAnnotation", (_store, ann) => {
+  // text in TextArea is always an array
+  const obscene = ann.results.find((r) => r.type === "textarea" && r.value.text.some((t) => t.includes("hate")));
+  if (!obscene || dismissed) return true;
 
-	// select region to see textarea
-	if (!obscene.area.classification) ann.selectArea(obscene.area);
+  // select region to see textarea
+  if (!obscene.area.classification) ann.selectArea(obscene.area);
 
-	Htx.showModal("The word 'hate' is disallowed", "error");
-	dismissed = true;
+  Htx.showModal("The word 'hate' is disallowed", "error");
+  dismissed = true;
 
-	return false;
+  return false;
 });

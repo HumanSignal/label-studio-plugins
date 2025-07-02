@@ -9,7 +9,7 @@ await LSI.import("https://unpkg.com/showdown/dist/showdown.min.js");
 const sumBlock = document.querySelector(".lsf-richtext");
 
 if (sumBlock) {
-	const converter = new showdown.Converter();
-	const html = converter.makeHtml(LSI.task.data.chat_transcript);
-	sumBlock.innerHTML = html;
+  const converter = new showdown.Converter();
+  const html = converter.makeHtml(LSI.task.data.chat_transcript);
+  sumBlock.innerHTML = html;
 }
