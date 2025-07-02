@@ -8,10 +8,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "biome check --write ."
+    "lint": "biome check --write .",
+    "prepare": "husky"
   },
   "dependencies": {},
   "devDependencies": {
-    "@biomejs/biome": "^2.0.6"
+    "@biomejs/biome": "^2.0.6",
+    "husky": "^9.1.7"
   }
 }
