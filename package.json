@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "biome check --apply .",
+    "lint": "biome check --write .",
     "prepare": "husky"
   },
   "dependencies": {},
