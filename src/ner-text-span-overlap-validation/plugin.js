@@ -2,7 +2,7 @@
  * Validates there are no NER text spans overlap before submitting an annotation
  */
 
-LSI.on("beforeSaveAnnotation", (store, annotation) => {
+LSI.on("beforeSaveAnnotation", () => {
   const existingEntities = Htx.annotationStore.selected.regions;
 
   const textRegions = existingEntities.filter(

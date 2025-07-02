@@ -13,7 +13,7 @@
 
 let dismissed = false;
 
-LSI.on("beforeSaveAnnotation", (store, ann) => {
+LSI.on("beforeSaveAnnotation", (_store, ann) => {
   // text in TextArea is always an array
   const obscene = ann.results.find((r) => r.type === "textarea" && r.value.text.some((t) => t.includes("hate")));
   if (!obscene || dismissed) return true;

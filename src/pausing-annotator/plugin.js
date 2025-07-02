@@ -92,7 +92,7 @@ function calcDeviation(data) {
   const mid = n / 2;
   const mean = data.reduce((a, b) => a + b) / n;
 
-  const k = data.reduce((a, b, i) => a + (b - mean) * (i - mid), 0) / data.reduce((a, b, i) => a + (i - mid) ** 2, 0);
+  const k = data.reduce((a, b, i) => a + (b - mean) * (i - mid), 0) / data.reduce((a, _b, i) => a + (i - mid) ** 2, 0);
   const mse = data.reduce((a, b, i) => a + (b - (k * (i - mid) + mean)) ** 2, 0) / n;
 
   return Math.abs(mse);
@@ -113,7 +113,7 @@ LSI.on("submitAnnotation", async (_store, annotation) => {
   let stats = [];
   try {
     stats = JSON.parse(localStorage.getItem(key)) ?? [];
-  } catch (e) {
+  } catch (_e) {
     // Ignore parse errors
   }
   stats.push({ values, created_at: Date.now() / 1000 });

@@ -25,18 +25,6 @@ async function fetchUserInfo() {
 }
 
 /**
- * Give visibility to the given selector
- */
-function displayEl(sel) {
-  const els = document.querySelectorAll(sel);
-  if (els) {
-    els.forEach((el, idx) => {
-      el.style.display = "block";
-    });
-  }
-}
-
-/**
  * If the logged in user is an Admin, remove the styling added to the view that hides
  * the annotator identity
  */

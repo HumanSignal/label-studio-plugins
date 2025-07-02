@@ -4,7 +4,7 @@
 
 let dismissed = false;
 
-LSI.on("beforeSaveAnnotation", (store, annotation) => {
+LSI.on("beforeSaveAnnotation", (_store, annotation) => {
   const textAreaResult = annotation.results.find((r) => r.type === "textarea" && r.from_name.name === "textarea");
 
   if (textAreaResult) {

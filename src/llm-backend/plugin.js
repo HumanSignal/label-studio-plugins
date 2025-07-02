@@ -23,7 +23,7 @@ async function fetchLLM(prompt) {
     },
   });
 
-  const data = await response.json();
+  return await response.json();
 }
 
 /**

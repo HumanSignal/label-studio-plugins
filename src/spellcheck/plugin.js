@@ -11,7 +11,7 @@ const dictionary = new Typo("en_US", false, false, {
 });
 const WORD_REGEX = /\w+/g;
 
-LSI.on("beforeSaveAnnotation", async (store, annotation) => {
+LSI.on("beforeSaveAnnotation", async (_store, annotation) => {
   // Find all textareas with misspellings
   const misspelledAreas = annotation.results.filter(
     (r) =>
