@@ -82,5 +82,11 @@
     "description": "Dynamically populates a text box given the input of a text area tag for span based labeling",
     "path": "dynamic-text-spans",
     "private": false
+  },
+  {
+    "title": "Decode S3/cloud storage paths",
+    "description": "Decodes base64-encoded fileuri parameters in resolve URLs to show human-readable S3/GCS/Azure paths",
+    "path": "decode-s3-paths",
+    "private": false
   }
 ]

@@ -1,0 +1,24 @@
+<View>
+  <Header value="Image Quality Review"/>
+
+  <!-- Display decoded S3 path for reference -->
+  <View style="padding: 10px; background-color: #f5f5f5; border-radius: 4px; margin-bottom: 15px;">
+    <Text name="image_path" value="Path: $image"/>
+  </View>
+
+  <!-- The image to review -->
+  <Image name="img" value="$image" zoom="true"/>
+
+  <!-- Simple quality assessment -->
+  <View style="margin-top: 15px;">
+    <Header value="Is this image acceptable?"/>
+    <Choices name="quality" toName="img" choice="single" required="true">
+      <Choice value="Yes"/>
+      <Choice value="No"/>
+    </Choices>
+  </View>
+
+  <TextArea name="notes" toName="img"
+            placeholder="Optional notes..."
+            rows="2" maxSubmissions="1"/>
+</View>
