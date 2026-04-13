@@ -88,5 +88,11 @@
     "description": "Decodes base64-encoded fileuri parameters in resolve URLs to show human-readable S3/GCS/Azure paths",
     "path": "decode-s3-paths",
     "private": false
+  },
+  {
+    "title": "Countdown timer",
+    "description": "Shows a countdown progress bar that tracks time spent per task with optional submit blocking",
+    "path": "countdown-timer",
+    "private": false
   }
 ]
