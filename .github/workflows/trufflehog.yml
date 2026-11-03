@@ -4,6 +4,9 @@ name: "TruffleHog"
 # Unverified results fail the job too: candidates are never sent to their providers.
 # Not a secret? Add `trufflehog:ignore` on its line after the value (not before), or a path regex to .trufflehogignore.
 
+permissions:
+  contents: read
+
 on:
   push:
     branches:
